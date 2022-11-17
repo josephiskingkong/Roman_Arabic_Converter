@@ -40,7 +40,6 @@ void fromArabicToRoman(int inputArabicNumber) {
 void fromRomanToArabic(string inputRomanNumber) {
     
     int n = int(inputRomanNumber.length());
-
     int result = 0;
     for (int i = 0; i < n; i++) {
         switch (inputRomanNumber[i]) {
@@ -110,7 +109,6 @@ int main() {
     cin >> choice;
     
     if (choice == 1 || choice == 0) {
-        
 		if (choice == 1) {
         	cout << "Enter Arabic number which you want to convert : ";
     	    cin >> inputArabicNumber;
