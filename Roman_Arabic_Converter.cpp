@@ -24,7 +24,7 @@ void fromArabicToRoman(int inputArabicNumber) {
         "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"
     };
     
-    int units = inputArabicNumber % 10;
+	int units = inputArabicNumber % 10;
     int tens = inputArabicNumber % 100 / 10;
     int hundreds = inputArabicNumber % 1000 / 100;
     int thousands = inputArabicNumber / 1000;
@@ -61,54 +61,54 @@ void fromRomanToArabic(string inputRomanNumber) {
             case 'D':
                 result += 500;
                 break;
-            case 'M':
+        	case 'M':
                 result += 1000;
-                break;
+            	break;
         }
     }
 
-    for (int i = 1; i < n; i++) {
+	for (int i = 1; i < n; i++) {
         
         
         if ((inputRomanNumber[i] == 'V' || inputRomanNumber[i] == 'X' || inputRomanNumber[i] == 'L' || 
         inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'I') {
-            result -= 1 + 1;
+		    result -= 1 + 1;
         }
         
-        if ((inputRomanNumber[i] == 'X' || inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || 
+		if ((inputRomanNumber[i] == 'X' || inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || 
         inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'V') {
-            result -= 5 + 5;
+		    result -= 5 + 5;
         }
         
-        if ((inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || 
-        inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'X') {
-            result -= 10 + 10;
+		if ((inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || 
+		inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'X') {
+		    result -= 10 + 10;
         }
         
-        if ((inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'L') {
-            result -= 50 + 50;
-        }
+    	if ((inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'L') {
+			result -= 50 + 50;
+    	}
 
-        if ((inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'C') {
-            result -= 100 + 100;
-        }
-        
-        if ((inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'D') {
+    	if ((inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'C') {
+		    result -= 100 + 100;
+    	}
+    	
+    	if ((inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'D') {
             result -= 500 + 500;
-        }
-    }
-    cout << "Roman " << inputRomanNumber << " is Arabic " << result << endl;
+    	}
+	}
+	cout << "Roman " << inputRomanNumber << " is Arabic " << result << endl;
 }
 
 int main() {
-    int inputArabicNumber;
-    string inputRomanNumber;
-    int choice;
+	int inputArabicNumber;
+	string inputRomanNumber;
+	int choice;
     
-    cout << "Enter 1 if you want to convert Arabic numeral in Roman. Else enter 0 : ";
-    cin >> choice;
+	cout << "Enter 1 if you want to convert Arabic numeral in Roman. Else enter 0 : ";
+	cin >> choice;
     
-    if (choice == 1 || choice == 0) {
+	if (choice == 1 || choice == 0) {
 		if (choice == 1) {
 			cout << "Enter Arabic number which you want to convert : ";
 			cin >> inputArabicNumber;
