@@ -110,12 +110,12 @@ int main() {
     
     if (choice == 1 || choice == 0) {
 		if (choice == 1) {
-        	cout << "Enter Arabic number which you want to convert : ";
-    	    cin >> inputArabicNumber;
-    	    fromArabicToRoman(inputArabicNumber);
+			cout << "Enter Arabic number which you want to convert : ";
+			cin >> inputArabicNumber;
+			fromArabicToRoman(inputArabicNumber);
 	    }
-	    if (choice == 0) {
-	    	cout << "Enter Roman number which you want to convert : ";
+		if (choice == 0) {
+			cout << "Enter Roman number which you want to convert : ";
         	cin >> inputRomanNumber;
         	fromRomanToArabic(inputRomanNumber);
 	    }
