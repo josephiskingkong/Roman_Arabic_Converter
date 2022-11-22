@@ -25,16 +25,16 @@ void fromArabicToRoman(int inputArabicNumber) {
     };
     
 	int units = inputArabicNumber % 10;
-    int tens = inputArabicNumber % 100 / 10;
-    int hundreds = inputArabicNumber % 1000 / 100;
-    int thousands = inputArabicNumber / 1000;
+	int tens = inputArabicNumber % 100 / 10;
+	int hundreds = inputArabicNumber % 1000 / 100;
+	int thousands = inputArabicNumber / 1000;
     
-    string thousandsRoman = "";
+	string thousandsRoman = "";
 	
 	for (int thousandsCounter = thousands; thousandsCounter > 0; --thousandsCounter) {
 		thousandsRoman += "M";
 	} 
-    cout << "Arabic " << inputArabicNumber << " is Roman " << thousandsRoman << hundredsRoman[hundreds] << tensRoman[tens] << unitsRoman[units] << endl << '\n';        
+	cout << "Arabic " << inputArabicNumber << " is Roman " << thousandsRoman << hundredsRoman[hundreds] << tensRoman[tens] << unitsRoman[units] << endl << '\n';        
 }
 
 void fromRomanToArabic(string inputRomanNumber) {
@@ -67,33 +67,35 @@ void fromRomanToArabic(string inputRomanNumber) {
         }
     }
 
-	for (int i = 1; i < n; i++) {
+	for (int romanNumberIndex = 1; romanNumberIndex < n; romanNumberIndex++) {
         
         
-        if ((inputRomanNumber[i] == 'V' || inputRomanNumber[i] == 'X' || inputRomanNumber[i] == 'L' || 
-        inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'I') {
+        if ((inputRomanNumber[romanNumberIndex] == 'V' || inputRomanNumber[romanNumberIndex] == 'X' || inputRomanNumber[romanNumberIndex] == 'L' || 
+        inputRomanNumber[romanNumberIndex] == 'C' || inputRomanNumber[romanNumberIndex] == 'D' || inputRomanNumber[romanNumberIndex] == 'M') 
+		&& inputRomanNumber[romanNumberIndex - 1] == 'I') {
 		    result -= 1 + 1;
         }
         
-		if ((inputRomanNumber[i] == 'X' || inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || 
-        inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'V') {
+		if ((inputRomanNumber[romanNumberIndex] == 'X' || inputRomanNumber[romanNumberIndex] == 'L' || inputRomanNumber[romanNumberIndex] == 'C' || 
+        inputRomanNumber[romanNumberIndex] == 'D' || inputRomanNumber[romanNumberIndex] == 'M') && inputRomanNumber[romanNumberIndex - 1] == 'V') {
 		    result -= 5 + 5;
         }
         
-		if ((inputRomanNumber[i] == 'L' || inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || 
-		inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'X') {
+		if ((inputRomanNumber[romanNumberIndex] == 'L' || inputRomanNumber[romanNumberIndex] == 'C' || inputRomanNumber[romanNumberIndex] == 'D' || 
+		inputRomanNumber[romanNumberIndex] == 'M') && inputRomanNumber[romanNumberIndex - 1] == 'X') {
 		    result -= 10 + 10;
         }
         
-    	if ((inputRomanNumber[i] == 'C' || inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'L') {
+    	if ((inputRomanNumber[romanNumberIndex] == 'C' || inputRomanNumber[romanNumberIndex] == 'D' || inputRomanNumber[romanNumberIndex] == 'M') 
+		&& inputRomanNumber[romanNumberIndex - 1] == 'L') {
 			result -= 50 + 50;
     	}
 
-    	if ((inputRomanNumber[i] == 'D' || inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'C') {
+    	if ((inputRomanNumber[romanNumberIndex] == 'D' || inputRomanNumber[romanNumberIndex] == 'M') && inputRomanNumber[romanNumberIndex - 1] == 'C') {
 		    result -= 100 + 100;
     	}
     	
-    	if ((inputRomanNumber[i] == 'M') && inputRomanNumber[i - 1] == 'D') {
+    	if ((inputRomanNumber[romanNumberIndex] == 'M') && inputRomanNumber[romanNumberIndex - 1] == 'D') {
             result -= 500 + 500;
     	}
 	}
